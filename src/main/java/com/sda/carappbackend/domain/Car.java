@@ -3,10 +3,8 @@ package com.sda.carappbackend.domain;
 import com.sun.istack.NotNull;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Builder
 @Getter
 @Entity
@@ -17,6 +15,7 @@ public class Car {
 
 
     @Id
+    @ManyToOne
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotNull
@@ -24,8 +23,14 @@ public class Car {
     @NotNull
     private String model;
     @NotNull
-    private String YearOfProduction;
+    private String yearOfProduction;
     @NotNull
     private String color;
+
+    private Long userId;
+
+    private String userName;
+
+    private String userSurname;
 
 }

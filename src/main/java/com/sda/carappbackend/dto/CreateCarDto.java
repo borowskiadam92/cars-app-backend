@@ -8,6 +8,8 @@ import lombok.Data;
 public class CreateCarDto {
 
     @NotNull
+    private Long userId;
+    @NotNull
     private String brand;
     @NotNull
     private String model;
